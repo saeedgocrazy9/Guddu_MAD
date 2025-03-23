@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!-- In res/values/colors.xml -->
+    <color name="yourSelectedColor">#FF5722</color>
+    <color name="yourDefaultColor">#757575</color>
+
 </resources>
