@@ -1,14 +1,12 @@
 <resources>
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/white</item>
         <!-- Dark variant for status bar -->
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/black</item>
         <!-- Accent color for FAB, etc. -->
-        <item name="colorAccent">@color/colorAccent</item>
 
         <!-- Customize additional theme attributes as needed -->
-        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
-        <item name="android:navigationBarColor">@color/colorPrimaryDark</item>
+
     </style>
 </resources>
