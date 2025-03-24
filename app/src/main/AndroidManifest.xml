@@ -12,7 +12,13 @@
         android:supportsRtl="true"
         tools:targetApi="31">
         <activity
+            android:name=".rooms"
+            android:exported="false" />
+        <activity
             android:name=".ManageRoomActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
