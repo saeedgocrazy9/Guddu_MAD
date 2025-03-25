@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class AdminActivity extends AppCompatActivity {
 
     private TextView tvAdminTitle;
+    private TextView tvTotalRooms;
     private Button btnManageRooms;
     private Button btnManageBookings;
     private Button btnManageUsers;
@@ -20,6 +21,7 @@ public class AdminActivity extends AppCompatActivity {
         // Set the content view to your admin.xml layout
         setContentView(R.layout.admiin);
 
+        tvTotalRooms=findViewById(R.id.tvTotalRooms);
         // Initialize views
         tvAdminTitle = findViewById(R.id.tvAdminTitle);
         btnManageRooms = findViewById(R.id.btnManageRooms);
@@ -28,7 +30,11 @@ public class AdminActivity extends AppCompatActivity {
 
         // Optionally, set the title programmatically (or it can remain set in the XML)
         tvAdminTitle.setText("🏨 Hotel Admin Panel");
+        DBHelper dbHelper = new DBHelper(this);
 
+        // Get total rooms and set it to the TextView
+        int totalRooms = dbHelper.getTotalRooms();
+        tvTotalRooms.setText("Total Rooms: " + totalRooms);
         // Set onClick listeners for buttons
 
         // When the "Manage Rooms" button is clicked, launch ManageRoomActivity
