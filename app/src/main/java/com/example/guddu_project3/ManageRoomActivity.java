@@ -21,7 +21,7 @@ public class ManageRoomActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
 
         // Set the content view to your activity_manage_room.xml layout
-        setContentView(R.layout.activity_manage_room);
+        setContentView(R.layout.activity_manage_rooms);
 
         // Ensure the root view in your activity_manage_room.xml has the id "main"
 
