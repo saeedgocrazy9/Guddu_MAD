@@ -142,6 +142,17 @@ public class DBHelper extends SQLiteOpenHelper {
         String query = "SELECT * FROM " + TABLE_ROOMS + " WHERE " + COLUMN_ROOM_TYPE + "=?";
         return db.rawQuery(query, new String[]{type});
     }
+    public int getTotalRooms() {
+        int count = 0;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM " + TABLE_ROOMS, null);
+        if (cursor != null && cursor.moveToFirst()) {
+            count = cursor.getInt(0);
+            cursor.close();
+        }
+        return count;
+    }
+
 
     // For retrieving a specific room
 

@@ -9,7 +9,24 @@
     <color name="colorPrimaryDark">#1B5E20</color>
     <!-- Accent color (Amber 500) -->
     <color name="colorAccent">#FFC107</color>
+    <color name="primary">#00796B</color> <!-- Teal shade, adjust as needed -->
 
+    <!-- Background Color -->
+    <color name="background">#FFFFFF</color> <!-- White -->
+
+    <!-- Text Colors -->
+    <color name="textPrimary">#212121</color> <!-- Dark Grey (For main text) -->
+    <color name="textSecondary">#757575</color> <!-- Lighter Grey (For hints and subtext) -->
+
+    <!-- Button Colors -->
+    <color name="buttonColor">#009688</color> <!-- Another teal shade -->
+    <color name="buttonTextColor">#FFFFFF</color> <!-- White text for buttons -->
+
+    <!-- EditText Background -->
+    <color name="editTextBackground">#EEEEEE</color> <!-- Light grey for input fields -->
+
+    <!-- Error Color (Optional, for validations) -->
+    <color name="errorColor">#D32F2F</color> <!-- Red for errors -->
     <!-- Background color (Light Gray) -->
     <color name="colorBackground">#F2F2F2</color>
     <!-- Text color on Primary/Accent (White) -->
