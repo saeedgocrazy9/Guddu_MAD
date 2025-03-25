@@ -1,5 +1,6 @@
 package com.example.guddu_project3;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -25,12 +26,12 @@ public class activity_destination extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_destination);
 
-        // Initialize views
+        // Initialize views from activity_destination.xml
         tvDestinationTitle = findViewById(R.id.tvDestinationTitle);
         hotelsContainer = findViewById(R.id.hotelsContainer);
         btnBack = findViewById(R.id.btnBack);
 
-        // Set up the back button to return to MainActivity
+        // Back button returns to the previous activity
         btnBack.setOnClickListener(v -> finish());
 
         // Retrieve the destination passed via intent
@@ -40,7 +41,7 @@ public class activity_destination extends AppCompatActivity {
         }
         tvDestinationTitle.setText("Hotels in " + destination);
 
-        // Retrieve a list of hotels for the given destination
+        // Get the list of hotels for the given destination
         List<Hotel> hotels = getHotelsForDestination(destination);
 
         // Inflate hotel cards and add them to the container
@@ -62,11 +63,10 @@ public class activity_destination extends AppCompatActivity {
             tvHotelRating.setText(hotel.getRating());
             tvHotelPrice.setText(hotel.getPrice());
 
-            // Set click listener to open the common hotel room page
+            // Set click listener to open the room page for this hotel
             hotelCard.setOnClickListener(v -> {
-                Intent intent = new Intent(activity_destination.this, HotelRoomActivity.class);
+                Intent intent = new Intent(activity_destination.this, activiyt_hotel_room.class);
                 intent.putExtra("HOTEL_NAME", hotel.getName());
-                // You can pass additional details if needed
                 startActivity(intent);
             });
 
@@ -74,7 +74,7 @@ public class activity_destination extends AppCompatActivity {
         }
     }
 
-    // Returns a list of 4 hotels for the given destination (modify cases as needed)
+    // Returns a list of hotels for the given destination
     private List<Hotel> getHotelsForDestination(String destination) {
         List<Hotel> hotels = new ArrayList<>();
         switch (destination.toLowerCase()) {
