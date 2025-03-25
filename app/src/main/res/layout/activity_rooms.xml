@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:id="@+id/rooms"
+    android:background="#F2F2F2">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvManageRoomsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manage Rooms"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:paddingBottom="20dp" />
+
+    <!-- Luxury Rooms Button -->
+    <Button
+        android:id="@+id/btnLuxuryRooms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Luxury Rooms"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="#FFD700"
+        android:textColor="#FFF"/>
+
+    <!-- Basic Rooms Button -->
+    <Button
+        android:id="@+id/btnBasicRooms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Basic Rooms"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="#8BC34A"
+        android:textColor="#FFF"/>
+
+    <!-- Standard (Medium) Rooms Button -->
+    <Button
+        android:id="@+id/btnStandardRooms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Standard Rooms"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="#03A9F4"
+        android:textColor="#FFF"/>
+
+</LinearLayout>

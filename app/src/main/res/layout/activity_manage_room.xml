@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/colorBackground">
 
     <!-- AppBar with Toolbar -->
     <com.google.android.material.appbar.AppBarLayout
@@ -17,9 +17,9 @@
             android:id="@+id/toolbarManageRooms"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/black"
+            android:background="@color/colorPrimary"
             android:title="Manage Rooms"
-
+            android:titleTextColor="@color/colorOnPrimary"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -32,15 +32,15 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <!-- Floating Action Button to add a new room -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabAddRoom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:contentDescription="Add Room"
-        android:src="@drawable/ic_add_room"
-
-        app:layout_anchor="@id/rvRooms"
-        app:layout_anchorGravity="bottom|end" />
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/fabAddRoom"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="16dp"-->
+<!--        android:contentDescription="Add Room"-->
+<!--&lt;!&ndash;        android:src="@drawable/ic_add_room"&ndash;&gt;-->
+<!--        app:backgroundTint="@color/colorAccent"-->
+<!--        app:layout_anchor="@id/rvRooms"-->
+<!--        app:layout_anchorGravity="bottom|end" />-->
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

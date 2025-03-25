@@ -4,7 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Destination title -->
+    <!-- Back button -->
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_alignParentStart="true"
+        android:layout_margin="16dp" />
+
+    <!-- Destination title positioned to the right of the back button -->
     <TextView
         android:id="@+id/tvDestinationTitle"
         android:layout_width="wrap_content"
@@ -12,17 +21,19 @@
         android:text="Hotels in ..."
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_margin="16dp" />
+        android:layout_toEndOf="@id/btnBack"
+        android:layout_alignTop="@id/btnBack"
+        android:layout_marginStart="16dp" />
 
     <!-- Container for hotel cards -->
     <ScrollView
         android:layout_below="@id/tvDestinationTitle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
         android:contentDescription="@string/hotels_list_desc">
 
-
-    <LinearLayout
+        <LinearLayout
             android:id="@+id/hotelsContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
