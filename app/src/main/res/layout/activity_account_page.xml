@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#FFF3E0"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:id="@+id/main"
+        >
+
+        <!-- User Info Container using LinearLayout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="16dp"
+            android:background="#FFFFFF"
+            android:elevation="6dp"
+            android:layout_marginBottom="24dp">
+
+            <!-- User Image -->
+            <ImageView
+                android:id="@+id/user_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="12dp"
+                android:src="@drawable/profile_page"
+                android:scaleType="centerCrop" />
+
+            <!-- Username -->
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shaqqqqq"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#E65100"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp" />
+
+            <!-- User Email -->
+            <TextView
+                android:id="@+id/user_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="email@example.com"
+                android:textSize="16sp"
+                android:textColor="#FF9800" />
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FF9800"
+            android:layout_marginVertical="12dp" />
+
+        <!-- Call Us for Help Row -->
+        <LinearLayout
+            android:id="@+id/row_call_us"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:id="@+id/icon_call_us"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/call_us"
+                android:layout_marginEnd="12dp" />
+
+            <TextView
+                android:id="@+id/text_call_us"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Call us for help"
+                android:textSize="16sp"
+                android:textColor="#E65100" />
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FF9800"
+            android:layout_marginVertical="8dp" />
+
+        <!-- Guest Policy Row -->
+        <LinearLayout
+            android:id="@+id/row_guest_policy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:id="@+id/icon_guest_policy"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/guest_policy"
+                android:layout_marginEnd="12dp" />
+
+            <TextView
+                android:id="@+id/text_guest_policy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Guest policy"
+                android:textSize="16sp"
+                android:textColor="#E65100" />
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FF9800"
+            android:layout_marginVertical="8dp" />
+
+        <!-- Logout Row -->
+        <LinearLayout
+            android:id="@+id/row_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/icon_logout"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/log_out"
+                android:layout_marginEnd="12dp" />
+
+            <TextView
+                android:id="@+id/text_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Log out"
+                android:textSize="16sp"
+                android:textColor="#E65100" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
