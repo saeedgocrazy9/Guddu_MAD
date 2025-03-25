@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -35,8 +36,7 @@
             android:layout_weight="1"
             app:cardCornerRadius="12dp"
             app:cardElevation="4dp"
-            android:layout_margin="6dp"
-            android:cardBackgroundColor="#4CAF50">
+            android:layout_margin="6dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -69,8 +69,7 @@
             android:layout_weight="1"
             app:cardCornerRadius="12dp"
             app:cardElevation="4dp"
-            android:layout_margin="6dp"
-            android:cardBackgroundColor="#FF9800">
+            android:layout_margin="6dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -104,7 +103,8 @@
             app:cardCornerRadius="12dp"
             app:cardElevation="4dp"
             android:layout_margin="6dp"
-            android:cardBackgroundColor="#2196F3">
+
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"

@@ -18,9 +18,11 @@
     <ScrollView
         android:layout_below="@id/tvDestinationTitle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:contentDescription="@string/hotels_list_desc">
 
-        <LinearLayout
+
+    <LinearLayout
             android:id="@+id/hotelsContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

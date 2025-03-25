@@ -44,8 +44,8 @@ public class AdminActivity extends AppCompatActivity {
         btnManageBookings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AdminActivity.this, ManageBookingsActivity.class);
-                startActivity(intent);
+               // Intent intent = new Intent(AdminActivity.this, ManageBookingsActivity.class);
+             //   startActivity(intent);
             }
         });
 
@@ -53,8 +53,8 @@ public class AdminActivity extends AppCompatActivity {
         btnManageUsers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AdminActivity.this, ManageUsersActivity.class);
-                startActivity(intent);
+             //   Intent intent = new Intent(AdminActivity.this, ManageUsersActivity.class);
+              //  startActivity(intent);
             }
         });
     }

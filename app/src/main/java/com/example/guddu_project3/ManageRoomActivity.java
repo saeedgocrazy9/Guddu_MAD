@@ -39,15 +39,15 @@ public class ManageRoomActivity extends AppCompatActivity {
         rvRooms.setLayoutManager(new LinearLayoutManager(this));
 
         // 3. Prepare some dummy data (Room objects)
-        List<Room> roomList = new ArrayList<>();
-        roomList.add(new Room("101", "Single", 50, "Available"));
-        roomList.add(new Room("102", "Double", 80, "Booked"));
-        roomList.add(new Room("103", "Suite", 120, "Available"));
-        roomList.add(new Room("104", "Double", 75, "Available"));
-        roomList.add(new Room("105", "Single", 60, "Booked"));
-
+       // List<Room> roomList = new ArrayList<>();
+      //  roomList.add(new Room("101", "Single", 50, "Available"));
+      //  roomList.add(new Room("102", "Double", 80, "Booked"));
+      //  roomList.add(new Room("103", "Suite", 120, "Available"));
+      //  roomList.add(new Room("104", "Double", 75, "Available"));
+      //  roomList.add(new Room("105", "Single", 60, "Booked"));
+//
         // 4. Create and set the adapter
-        RoomAdapter adapter = new RoomAdapter(roomList);
-        rvRooms.setAdapter(adapter);
+      //  RoomAdapter adapter = new RoomAdapter(roomList);
+     //   rvRooms.setAdapter(adapter);
     }
 }

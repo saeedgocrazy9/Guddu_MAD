@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Guddu_Project3</string>
+        <string name="hotels_list_desc">List of available hotels for the selected destination</string>
+
+
 </resources>
