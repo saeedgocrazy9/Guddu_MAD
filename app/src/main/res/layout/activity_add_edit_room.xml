@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvAddEditTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add / Edit Room"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        />
+
+    <!-- Room Number -->
+    <EditText
+        android:id="@+id/etRoomNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Room Number"
+        android:layout_below="@id/tvAddEditTitle"
+        android:layout_marginTop="16dp"
+        />
+
+    <!-- Price -->
+    <EditText
+        android:id="@+id/etPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Price"
+        android:inputType="numberDecimal"
+        android:layout_below="@id/etRoomNumber"
+        android:layout_marginTop="16dp"
+        />
+
+    <!-- Status -->
+    <EditText
+        android:id="@+id/etStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Status (available/occupied)"
+        android:layout_below="@id/etPrice"
+        android:layout_marginTop="16dp"
+        />
+
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/btnSaveRoom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Room"
+        android:layout_alignParentBottom="true"
+        />
+</RelativeLayout>
