@@ -1,44 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:padding="16dp">
 
-    <!-- Back button -->
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back" />
-
-    <!-- Hotel Room Title -->
-    <TextView
-        android:id="@+id/tvHotelRoomTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rooms at Hotel Name"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_toEndOf="@id/btnBack"
-        android:layout_alignTop="@id/btnBack"
-        android:layout_marginStart="16dp" />
-
-    <!-- ScrollView for room cards -->
-    <ScrollView
-        android:layout_below="@id/btnBack"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="16dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <!-- Container for room cards -->
+        <!-- Title: Displays hotel name -->
+        <TextView
+            android:id="@+id/tvHotelRoomTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rooms at [Hotel Name]"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Total Available Rooms -->
+        <TextView
+            android:id="@+id/tvTotalAvailableRooms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Available Rooms: 0"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Container for dynamic room cards -->
         <LinearLayout
             android:id="@+id/roomsContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <!-- Room cards will be added dynamically -->
+            <!-- Room cards will be dynamically added here -->
         </LinearLayout>
-    </ScrollView>
 
-</RelativeLayout>
+    </LinearLayout>
+</ScrollView>

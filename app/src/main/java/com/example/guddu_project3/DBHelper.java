@@ -100,16 +100,14 @@ public class DBHelper extends SQLiteOpenHelper {
         return id;
     }
 
-    // Method to retrieve all rooms as a list of strings.
+    // Method to retrieve all rooms as a Cursor.
     public Cursor getAllRooms() {
         SQLiteDatabase db = this.getReadableDatabase();
         String query = "SELECT * FROM " + TABLE_ROOMS;
         return db.rawQuery(query, null);
     }
 
-    // +3: Additional methods
-
-    // 1. Update a room's details.
+    // Update a room's details.
     public int updateRoom(int id, String roomNumber, String roomType, double price, String status) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -122,7 +120,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return rowsAffected;
     }
 
-    // 2. Delete a room by its ID.
+    // Delete a room by its ID.
     public int deleteRoom(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
         int rowsDeleted = db.delete(TABLE_ROOMS, COLUMN_ROOM_ID + "=?", new String[]{String.valueOf(id)});
@@ -130,18 +128,21 @@ public class DBHelper extends SQLiteOpenHelper {
         return rowsDeleted;
     }
 
-    // 3. Get a room by its ID.
+    // Get a room by its ID.
     public Cursor getRoomById(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
         String query = "SELECT * FROM " + TABLE_ROOMS + " WHERE " + COLUMN_ROOM_ID + "=?";
         return db.rawQuery(query, new String[]{String.valueOf(id)});
     }
-    // For filtering by type
+
+    // Retrieve rooms by type.
     public Cursor getRoomsByType(String type) {
         SQLiteDatabase db = this.getReadableDatabase();
         String query = "SELECT * FROM " + TABLE_ROOMS + " WHERE " + COLUMN_ROOM_TYPE + "=?";
         return db.rawQuery(query, new String[]{type});
     }
+
+    // Get total number of rooms.
     public int getTotalRooms() {
         int count = 0;
         SQLiteDatabase db = this.getReadableDatabase();
@@ -153,8 +154,102 @@ public class DBHelper extends SQLiteOpenHelper {
         return count;
     }
 
+    // BOOKING METHOD:
+    // This method inserts a new booking and updates the room's status to 'occupied'
+    public boolean bookRoom(int userId, int roomId, String checkInDate, String checkOutDate) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.beginTransaction();
+        try {
+            // Insert booking record
+            ContentValues bookingValues = new ContentValues();
+            bookingValues.put(COLUMN_BOOKING_USER_ID, userId);
+            bookingValues.put(COLUMN_BOOKING_ROOM_ID, roomId);
+            bookingValues.put(COLUMN_CHECK_IN_DATE, checkInDate);
+            bookingValues.put(COLUMN_CHECK_OUT_DATE, checkOutDate);
+            bookingValues.put(COLUMN_BOOKING_STATUS, "confirmed");
+            long bookingId = db.insert(TABLE_BOOKINGS, null, bookingValues);
+            if (bookingId == -1) {
+                return false;
+            }
+            // Update room status to 'occupied'
+            ContentValues roomValues = new ContentValues();
+            roomValues.put(COLUMN_STATUS, "occupied");
+            int rowsUpdated = db.update(TABLE_ROOMS, roomValues, COLUMN_ROOM_ID + "=?", new String[]{String.valueOf(roomId)});
+            if (rowsUpdated == 0) {
+                return false;
+            }
+            db.setTransactionSuccessful();
+            return true;
+        } finally {
+            db.endTransaction();
+            db.close();
+        }
+    }
+    // Retrieve the booking for a given room that is currently confirmed
+    public Cursor getBookingForRoom(int roomId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABLE_BOOKINGS + " WHERE " + COLUMN_BOOKING_ROOM_ID + "=? AND " + COLUMN_BOOKING_STATUS + "='confirmed'";
+        return db.rawQuery(query, new String[]{String.valueOf(roomId)});
+    }
+    // Cancel a booking by updating its status to "cancelled"
+    public int cancelBooking(int bookingId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_BOOKING_STATUS, "cancelled");
+        int rowsAffected = db.update(TABLE_BOOKINGS, values, COLUMN_BOOKING_ID + "=?", new String[]{String.valueOf(bookingId)});
+        db.close();
+        return rowsAffected;
+    }
+    // Retrieve all bookings
+    public Cursor getAllBookings() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABLE_BOOKINGS;
+        return db.rawQuery(query, null);
+    }
+    // Retrieve all users
+    public Cursor getAllUsers() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABLE_USERS;
+        return db.rawQuery(query, null);
+    }
+    public int getAvailableRoomsCount() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM " + TABLE_ROOMS + " WHERE " + COLUMN_STATUS + "='available'", null);
+        int count = 0;
+        if (cursor.moveToFirst()) {
+            count = cursor.getInt(0);
+        }
+        cursor.close();
+        return count;
+    }
 
-    // For retrieving a specific room
+    // Delete a user by its ID
+    public int deleteUser(int userId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        int rowsDeleted = db.delete(TABLE_USERS, COLUMN_USER_ID + "=?", new String[]{String.valueOf(userId)});
+        db.close();
+        return rowsDeleted;
+    }
 
+    public int getTotalBookings() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM " + TABLE_BOOKINGS, null);
+        int count = 0;
+        if (cursor.moveToFirst()) {
+            count = cursor.getInt(0);
+        }
+        cursor.close();
+        return count;
+    }
 
+    public int getTotalUsers() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM " + TABLE_USERS, null);
+        int count = 0;
+        if (cursor.moveToFirst()) {
+            count = cursor.getInt(0);
+        }
+        cursor.close();
+        return count;
+    }
 }
