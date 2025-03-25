@@ -386,6 +386,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/bottom_menu"/>
+        app:menu="@menu/bottom_menu"
+        app:itemIconTint="@null"
+        android:background="@color/white"
+        />
 
 </RelativeLayout>

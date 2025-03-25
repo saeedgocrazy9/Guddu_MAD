@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:id="@+id/main"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#FFF3E0">  <!-- Light Orange Background -->
+
+        <!-- Room Header / Title -->
+        <TextView
+            android:id="@+id/tvRoomHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Booking Details"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="16dp"
+            android:textColor="#BF360C"/>  <!-- Dark Orange Text -->
+
+        <!-- Name Input -->
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Name"
+            android:padding="8dp"
+            android:textColor="#000000"
+            android:textColorHint="#BF360C"/>
+
+        <!-- Email Input -->
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:textColor="#000000"
+            android:textColorHint="#BF360C"/>
+
+        <!-- Phone Input -->
+        <EditText
+            android:id="@+id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Phone"
+            android:inputType="phone"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:textColor="#000000"
+            android:textColorHint="#BF360C"/>
+
+        <!-- Check-in Date -->
+        <EditText
+            android:id="@+id/etCheckInDate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Check-in Date"
+            android:focusable="false"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:textColor="#000000"
+            android:textColorHint="#BF360C"/>
+
+        <!-- Check-out Date -->
+        <EditText
+            android:id="@+id/etCheckOutDate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Check-out Date"
+            android:focusable="false"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:textColor="#000000"
+            android:textColorHint="#BF360C"/>
+
+        <!-- Submit Booking Button -->
+        <Button
+            android:id="@+id/btnSubmitBooking"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="BOOK NOW / PAY"
+            android:layout_marginTop="16dp"
+            android:textColor="@android:color/white"
+            android:background="#FF9800"/>  <!-- Material Orange -->
+
+        <!-- Social and Call Icons Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ivCall"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="Call Icon"
+
+
+                />
+
+            <ImageView
+                android:id="@+id/ivFacebook"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:contentDescription="Facebook Icon"
+
+                />
+
+            <ImageView
+                android:id="@+id/ivTwitter"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:contentDescription="Twitter Icon"
+
+                />
+
+            <ImageView
+                android:id="@+id/ivWhatsapp"
+                android:layout_width="57dp"
+                android:layout_height="63dp"
+                android:layout_marginStart="16dp"
+                android:contentDescription="Whatsapp Icon"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
