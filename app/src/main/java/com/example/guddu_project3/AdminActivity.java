@@ -1,4 +1,4 @@
-package com.example.guddu_project3; // Replace with your actual package name
+package com.example.guddu_project3;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ public class AdminActivity extends AppCompatActivity {
 
     private TextView tvAdminTitle;
     private TextView tvTotalRooms;
+    private TextView tvTotalBookings;
+    private TextView tvTotalUsers;
     private Button btnManageRooms;
     private Button btnManageBookings;
     private Button btnManageUsers;
@@ -18,50 +20,47 @@ public class AdminActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Set the content view to your admin.xml layout
-        setContentView(R.layout.admiin);
+        setContentView(R.layout.admiin); // Ensure the correct layout file is set
 
-        tvTotalRooms=findViewById(R.id.tvTotalRooms);
         // Initialize views
         tvAdminTitle = findViewById(R.id.tvAdminTitle);
+        tvTotalRooms = findViewById(R.id.tvTotalRooms);
+        tvTotalBookings = findViewById(R.id.tvTotalBookings);
+        tvTotalUsers = findViewById(R.id.tvTotalUsers);
         btnManageRooms = findViewById(R.id.btnManageRooms);
         btnManageBookings = findViewById(R.id.btnManageBookings);
         btnManageUsers = findViewById(R.id.btnManageUsers);
 
-        // Optionally, set the title programmatically (or it can remain set in the XML)
+        // Set admin panel title
         tvAdminTitle.setText("🏨 Hotel Admin Panel");
+
+        // Initialize database helper
         DBHelper dbHelper = new DBHelper(this);
 
-        // Get total rooms and set it to the TextView
+        // Fetch data from database
         int totalRooms = dbHelper.getTotalRooms();
-        tvTotalRooms.setText("Total Rooms: " + totalRooms);
-        // Set onClick listeners for buttons
+        int totalBookings = dbHelper.getTotalBookings();
+        int totalUsers = dbHelper.getTotalUsers();
 
-        // When the "Manage Rooms" button is clicked, launch ManageRoomActivity
-        btnManageRooms.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(AdminActivity.this, rooms.class);
-                startActivity(intent);
-            }
+        // Set data to TextViews
+        tvTotalRooms.setText(String.valueOf(totalRooms));
+        tvTotalBookings.setText(String.valueOf(totalBookings));
+        tvTotalUsers.setText(String.valueOf(totalUsers));
+
+        // Set onClick listeners
+        btnManageRooms.setOnClickListener(view -> {
+            Intent intent = new Intent(AdminActivity.this, rooms.class);
+            startActivity(intent);
         });
 
-        // When the "Manage Bookings" button is clicked, launch ManageBookingsActivity
-        btnManageBookings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                Intent intent = new Intent(AdminActivity.this, ManageBookingsActivity.class);
-//                startActivity(intent);
-            }
+        btnManageBookings.setOnClickListener(view -> {
+            Intent intent = new Intent(AdminActivity.this, ManageBookingsActivity.class);
+            startActivity(intent);
         });
 
-        // When the "Manage Users" button is clicked, launch ManageUsersActivity
-        btnManageUsers.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                Intent intent = new Intent(AdminActivity.this, ManageUsersActivity.class);
-//                startActivity(intent);
-            }
+        btnManageUsers.setOnClickListener(view -> {
+            Intent intent = new Intent(AdminActivity.this, ManageUsersActivity.class);
+            startActivity(intent);
         });
     }
 }

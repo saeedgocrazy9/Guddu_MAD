@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.guddu_project3">
 
@@ -7,54 +8,88 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/launcher_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/launcher_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="31">
+
+        <!-- About Activity -->
         <activity
             android:name=".About"
-            android:exported="false" />
+            android:exported="true" />
+
+        <!-- Account Page Activity -->
         <activity
             android:name=".Account_page"
-            android:exported="false" /> <!-- Signup Activity -->
+            android:exported="true" />
+
+        <!-- Manage Users Activity -->
+        <activity
+            android:name=".ManageUsersActivity"
+            android:exported="true" />
+
+        <!-- Manage Bookings Activity -->
+        <activity
+            android:name=".ManageBookingsActivity"
+            android:exported="true" />
+
+        <!-- Signup Activity -->
         <activity
             android:name=".Signup"
-            android:exported="false" /> <!-- Admin Activity -->
+            android:exported="false" />
+
+        <!-- Admin Activity -->
         <activity
             android:name=".AdminActivity"
-            android:exported="false" /> <!-- Add/Edit Room Activity -->
+            android:exported="false" />
+
+        <!-- Add/Edit Room Activity -->
         <activity
             android:name=".AddEditRoomActivity"
-            android:exported="false" /> <!-- Login Activity (Launcher) -->
+            android:exported="false" />
+
+        <!-- Login Activity -->
         <activity
             android:name=".Login"
+            android:exported="true" />
+
+        <!-- Main Activity (Launcher) -->
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Main Activity -->
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" /> <!-- Rooms Activity -->
+        </activity>
+
+        <!-- Rooms Activity -->
         <activity
             android:name=".rooms"
-            android:exported="false" /> <!-- Manage Rooms Activity -->
+            android:exported="false" />
+
+        <!-- Manage Rooms Activity -->
         <activity
             android:name=".ManageRoomsActivity"
-            android:exported="false" /> <!-- Booking Details Activity -->
+            android:exported="false" />
+
+        <!-- Booking Details Activity -->
         <activity
             android:name=".BookingDetails"
-            android:exported="true" /> <!-- Hotel Room Activity -->
+            android:exported="true" />
+
+        <!-- Hotel Room Activity -->
         <activity
             android:name=".activiyt_hotel_room"
-            android:exported="true" /> <!-- Destination Activity -->
+            android:exported="true" />
+
+        <!-- Destination Activity -->
         <activity
             android:name=".activity_destination"
             android:exported="true" />
+
     </application>
 
 </manifest>

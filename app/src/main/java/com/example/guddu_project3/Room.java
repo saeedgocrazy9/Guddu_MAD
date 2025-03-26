@@ -1,20 +1,28 @@
 package com.example.guddu_project3;
 
 public class Room {
-    private String roomName;
+    private int id;
+    private String roomNumber;
     private String roomType;
     private String roomPrice;
+    private String status;
     private int imageResId;
 
-    public Room(String roomName, String roomType, String roomPrice, int imageResId) {
-        this.roomName = roomName;
+    public Room(int id, String roomNumber, String roomType, String roomPrice, String status, int imageResId) {
+        this.id = id;
+        this.roomNumber = roomNumber;
         this.roomType = roomType;
         this.roomPrice = roomPrice;
+        this.status = status;
         this.imageResId = imageResId;
     }
 
-    public String getRoomName() {
-        return roomName;
+    public int getId() {
+        return id;
+    }
+
+    public String getRoomNumber() {
+        return roomNumber;
     }
 
     public String getRoomType() {
@@ -23,6 +31,10 @@ public class Room {
 
     public String getRoomPrice() {
         return roomPrice;
+    }
+
+    public String getStatus() {
+        return status;
     }
 
     public int getImageResId() {
